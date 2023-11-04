@@ -1,11 +1,19 @@
 from flask import Flask, render_template
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
+
+
+class Item(db.Model):
+    name = db.Column(db.String(length(20)), nullable= False, unique= True )
+    barcode = db.Column(db.Integer(length(12), nullable=False, unique =True))
+    price = db.Column(db.Integer())
+
 
 @app.route("/")
 @app.route('/home')
-def home():
+def home_page():
     return render_template("home.html")
 
 @app.route("/market")
