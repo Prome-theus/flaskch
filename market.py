@@ -27,5 +27,5 @@ def market_page():
     return render_template('market.html', items=items)
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
