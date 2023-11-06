@@ -1,0 +1,42 @@
+…                                           flask   main ↑2  ?3 -2052   flask 
+manoj ❯ flask shell
+Python 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801] on linux
+App: app
+Instance: /home/manoj/Desktop/systum/flask/instance
+>>> from app import db
+>>> db.create_all()
+
+>>> from app import Item
+>>> item1 = Item(name="iphone10", price=500, barcode='123456789876', description='desc')
+>>> db.session.add(item1)
+>>> db.session.commit()
+>>> item2 = Item(name="laptop", price=600, barcode='678987654321', 
+description='description')
+>>> db.session.add(item2)
+>>> db.session.commit()
+>>> Item.query.all()
+[Item iphone10, Item laptop]
+>>> for item in Item.query.all():
+...     item.name
+...     item.price
+...     item.description
+...     item.id
+...     item.barcode
+... 
+'iphone10'
+500
+'desc'
+1
+'123456789876'
+'laptop'
+600
+'description'
+2
+'678987654321'
+>>> Item.query.filter_by(price=500)
+<flask_sqlalchemy.query.Query object at 0x7f78d0454b90>
+
+>>> for item in Item.query.filter_by(price=500):
+...     item.name
+... 
+'iphone10'
