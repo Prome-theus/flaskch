@@ -1,0 +1,12 @@
+# Ignore a specific file
+db.txt
+
+# Ignore all files with a specific extension
+*.log
+
+# Ignore an entire directory
+mydirectory/
+.venv/
+.vscode/
+
+
