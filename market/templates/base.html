@@ -9,30 +9,47 @@
   <body class="bg-gray-900">
     <!-- navbar goes here -->
     <nav class="bg-gray-100">
-      <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-6xl mx-auto px-2">
         <div class="flex justify-between">
           <div class="flex space-x-4">
             <!-- logo -->
             <div>
               <a
                 href="#"
-                class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900"
+                class="flex items-center py-1 px-2 text-gray-700 hover:text-gray-900"
               >
                 <svg
-                  class="h-6 w-6 mr-1 text-blue-400"
                   xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 120 120"
                   fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M91.4062 0C108.75 0 120 11.25 120 28.5938V91.4062C120 108.75 108.75 120 91.4062 120H28.5938C11.25 120 0 108.75 0 91.4062V28.5938C0 11.25 11.25 0 28.5938 0H91.4062Z"
+                    fill="url(#paint0_linear_1_5)"
                   />
+                  <path
+                    d="M54.8705 70.488C53.3345 71 52.0972 71.256 51.1585 71.256L47.7025 103.512L34.9025 104.792L27.6065 22.36C32.1292 20.9093 38.1025 19.5867 45.5265 18.392C53.0358 17.1973 60.2038 16.6 67.0305 16.6C77.9532 16.6 86.6998 18.648 93.2705 22.744C94.8065 27.352 95.5745 31.576 95.5745 35.416C95.5745 46.168 89.3878 55.0427 77.0145 62.04L98.5185 102.872L89.5585 107.864L54.8705 70.488ZM70.8705 38.872C70.8705 32.8133 68.1825 28.1627 62.8065 24.92C60.7585 24.92 58.4545 25.3467 55.8945 26.2L52.0545 63.064C57.9425 60.4187 62.5505 56.8773 65.8785 52.44C69.2065 47.9173 70.8705 43.3947 70.8705 38.872Z"
+                    fill="white"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_1_5"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="120"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FFA600" />
+                      <stop offset="1" stop-color="#F9661E" />
+                    </linearGradient>
+                  </defs>
                 </svg>
-                <span class="font-bold">Better Dev</span>
+                <span class="font-bold p-3 text-xl">Review and Reward</span>
               </a>
             </div>
 
@@ -47,6 +64,11 @@
                 href="{{ url_for('market_page') }}"
                 class="py-5 px-3 text-gray-700 hover:text-gray-900"
                 >Market</a
+              >
+              <a
+                href="{{ url_for('market_page') }}"
+                class="py-5 px-3 text-gray-700 hover:text-gray-900"
+                >Categories</a
               >
             </div>
           </div>
@@ -97,9 +119,7 @@
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category,message in messages %}
     <div class="flex items-center justify-center">
-      <div class="rounded-md bg-red-300 p-2 text-center">
-        {{ message }}
-      </div>
+      <div class="rounded-md bg-red-300 p-2 text-center">{{ message }}</div>
     </div>
     {% endfor %} {% endif %} {% endwith %} {% block content %} {% endblock
     content %}
