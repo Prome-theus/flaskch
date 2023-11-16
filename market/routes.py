@@ -16,6 +16,10 @@ def market_page():
     items = Item.query.all()
     return render_template('market.html', items=items)
 
+@app.route('/categories')
+def categories():
+    return render_template('categories.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
