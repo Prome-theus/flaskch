@@ -19,7 +19,7 @@ def market_page():
 
 @app.route('/categories')
 def categories():
-    return render_template('categories.html')
+    return render_template('Categories.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -45,14 +45,14 @@ def login_page():
         attempted_user = User.query.filter_by(username=form.username.data).first()
         if attempted_user and attempted_user.check_password_correction(attempted_password=form.password.data):
             login_user(attempted_user)  
-            flash('Success! You are logged in as:  {attempted_user.username}', category='success')
+            flash(f'Success! You are logged in as:  {attempted_user.username}', category='success')
             return redirect(url_for('market_page'))
         else:
             flash('Username and Password does not exist', category='danger')
 
     return render_template("login.html", form=form)
     
-app.route('/logout')
+@app.route('/logout')
 def logout_page():
     logout_user()
     flash("you have been logged out!", category='info')
