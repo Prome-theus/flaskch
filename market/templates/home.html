@@ -4,9 +4,12 @@ block content %}
   class="relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-blue-800 text-white"
 >
   <div class="mx-auto my-5 md:w-1/2">
-    <h1 class="text-4xl font-bold">Jim Shaped Coding Market</h1>
-    <p class="text-lg">Start purchasing products by clicking the link below</p>
-    <a class="btn btn-primary" href="{{ url_for('market_page') }}"
+    <h1 class="text-4xl font-bold">Give Review , Earn Reward</h1>
+    <div class="text-lg p-2 mb-2">Post a Review right now!</div>
+
+    <a
+      class="rounded-xl bg-orange-500 p-3 m-4"
+      href="{{ url_for('market_page') }}"
       >Get Started</a
     >
   </div>
@@ -298,177 +301,308 @@ block content %}
     </p>
   </div>
   <!-- component -->
-  <div class="antialiased bg-gray-800 text-white h-screen px-4">
-    <div class="flex flex-col justify-center h-full">
-      <!-- Table -->
-      <div
-        class="w-full max-w-2xl mx-auto bg-dark shadow-lg rounded-sm border border-gray-200"
-      >
-        <header class="px-5 py-4 border-b border-gray-100">
-          <h2 class="font-semibold text-white">Customers</h2>
-        </header>
-        <div class="p-3">
-          <div class="overflow-x-auto">
-            <table class="table-auto w-full">
-              <thead
-                class="text-xs font-semibold uppercase text-gray-400 bg-gray-400"
-              >
-                <tr>
-                  <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-left">Name</div>
-                  </th>
-                  <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-left">Email</div>
-                  </th>
-                  <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-left">Spent</div>
-                  </th>
-                  <th class="p-2 whitespace-nowrap">
-                    <div class="font-semibold text-center">Country</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="text-sm divide-y divide-gray-100">
-                <tr>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="flex items-center">
-                      <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                        <img
-                          class="rounded-full"
-                          src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
-                          width="40"
-                          height="40"
-                          alt="Alex Shatov"
-                        />
-                      </div>
-                      <div class="font-medium text-gray-800">Alex Shatov</div>
+  <div class="antialiased bg-gray-800 text-white p-8">
+    <!-- Table -->
+    <div
+      class="w-full max-w-2xl mx-auto bg-dark shadow-lg rounded-sm border border-gray-200"
+    >
+      <header class="px-5 py-4 border-b border-gray-100">
+        <h2 class="font-semibold text-white text-center">Customers</h2>
+      </header>
+      <div class="p-3">
+        <div class="overflow-x-auto">
+          <table class="table-auto w-full">
+            <thead
+              class="text-xs font-semibold uppercase text-gray-900 bg-white"
+            >
+              <tr>
+                <th class="p-2 whitespace-nowrap">
+                  <div class="font-semibold text-left">Name</div>
+                </th>
+                <th class="p-2 whitespace-nowrap">
+                  <div class="font-semibold text-left">Email</div>
+                </th>
+                <th class="p-2 whitespace-nowrap">
+                  <div class="font-semibold text-left">Spent</div>
+                </th>
+                <th class="p-2 whitespace-nowrap">
+                  <div class="font-semibold text-center">Country</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-sm divide-y divide-gray-100">
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        width="40"
+                        height="40"
+                        alt="Alex Shatov"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left">alexshatov@gmail.com</div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left font-medium text-green-500">
-                      $2,890.66
+                    <div class="font-medium text-white">Alex Shatov</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">alexshatov@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-06.jpg"
+                        width="40"
+                        height="40"
+                        alt="Philip Harbach"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-lg text-center">??</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="flex items-center">
-                      <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                        <img
-                          class="rounded-full"
-                          src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-06.jpg"
-                          width="40"
-                          height="40"
-                          alt="Philip Harbach"
-                        />
-                      </div>
-                      <div class="font-medium text-gray-800">
-                        Philip Harbach
-                      </div>
+                    <div class="font-medium text-white">Philip Harbach</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">philip.h@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,767.04
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-07.jpg"
+                        width="40"
+                        height="40"
+                        alt="Mirko Fisuk"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left">philip.h@gmail.com</div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left font-medium text-green-500">
-                      $2,767.04
+                    <div class="font-medium text-white">Mirko Fisuk</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">mirkofisuk@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,996.00
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-08.jpg"
+                        width="40"
+                        height="40"
+                        alt="Olga Semklo"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-lg text-center">??</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="flex items-center">
-                      <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                        <img
-                          class="rounded-full"
-                          src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-07.jpg"
-                          width="40"
-                          height="40"
-                          alt="Mirko Fisuk"
-                        />
-                      </div>
-                      <div class="font-medium text-gray-800">Mirko Fisuk</div>
+                    <div class="font-medium text-white">Olga Semklo</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">olga.s@cool.design</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $1,220.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-09.jpg"
+                        width="40"
+                        height="40"
+                        alt="Burak Long"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left">mirkofisuk@gmail.com</div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left font-medium text-green-500">
-                      $2,996.00
+                    <div class="font-medium text-white">Burak Long</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">longburak@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $1,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        width="40"
+                        height="40"
+                        alt="Alex Shatov"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-lg text-center">??</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="flex items-center">
-                      <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                        <img
-                          class="rounded-full"
-                          src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-08.jpg"
-                          width="40"
-                          height="40"
-                          alt="Olga Semklo"
-                        />
-                      </div>
-                      <div class="font-medium text-gray-800">Olga Semklo</div>
+                    <div class="font-medium text-white">Alex Shatov</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">alexshatov@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        width="40"
+                        height="40"
+                        alt="Alex Shatov"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left">olga.s@cool.design</div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left font-medium text-green-500">
-                      $1,220.66
+                    <div class="font-medium text-white">Alex Shatov</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">alexshatov@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        width="40"
+                        height="40"
+                        alt="Alex Shatov"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-lg text-center">??</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="flex items-center">
-                      <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                        <img
-                          class="rounded-full"
-                          src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-09.jpg"
-                          width="40"
-                          height="40"
-                          alt="Burak Long"
-                        />
-                      </div>
-                      <div class="font-medium text-gray-800">Burak Long</div>
+                    <div class="font-medium text-white">Alex Shatov</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">alexshatov@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        width="40"
+                        height="40"
+                        alt="Alex Shatov"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left">longburak@gmail.com</div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-left font-medium text-green-500">
-                      $1,890.66
+                    <div class="font-medium text-white">Alex Shatov</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">alexshatov@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
+                      <img
+                        class="rounded-full"
+                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        width="40"
+                        height="40"
+                        alt="Alex Shatov"
+                      />
                     </div>
-                  </td>
-                  <td class="p-2 whitespace-nowrap">
-                    <div class="text-lg text-center">??</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                    <div class="font-medium text-white">Alex Shatov</div>
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left">alexshatov@gmail.com</div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-left font-medium text-green-500">
+                    $2,890.66
+                  </div>
+                </td>
+                <td class="p-2 whitespace-nowrap">
+                  <div class="text-lg text-center">??</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -554,18 +688,15 @@ block content %}
 <section class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-sm text-center">
-      <h2
-        class="mb-4 text-4xl font-extrabold leading-tight text-gray-900 dark:text-white"
+      <div
+        class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white"
       >
-        Start your free trial today
-      </h2>
-      <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
-        Try Flowbite Platform for 30 days. No credit card required.
-      </p>
+        Start your ReviewReward journey today!
+      </div>
       <a
-        href="#"
+        href="{{ url_for('market_page') }}"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-        >Free trial for 30 days</a
+        >Post a Review</a
       >
     </div>
   </div>
