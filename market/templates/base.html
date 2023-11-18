@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
+    crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.css"
+    rel="stylesheet"
+    />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      .swiper-pagination {
+        bottom: 0;
+        position: relative;
+      }
+      
+      .swiper-container {
+        overflow: hidden;
+      }
+      .swiper-pagination-bullet{
+        background-color:rgb(14 211 207);
+      }
+      .swiper-pagination-bullet-active{
+        background-color:rgb(14 211 207);
+      }
+      </style>
+    <link
       rel="icon"
       href="{{ url_for('static', filename='/image/favicon.ico') }}"
       type="image/x-icon"
