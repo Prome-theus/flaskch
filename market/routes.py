@@ -1,7 +1,7 @@
 from market import app
 from flask import render_template, redirect, url_for, flash
 from market.models import Item, User
-from market.forms import RegisterForm, LoginForm
+from market.forms import RegisterForm, LoginForm , ItemAdd
 from market import db
 from flask_login import login_user, logout_user, login_required
 
@@ -61,7 +61,28 @@ def logout_page():
     flash("you have been logged out!", category='info')
     return redirect(url_for("home_page"))
 
-@app.route('/item_add')
+@app.route('/item_add', methods=['GET', 'POST'])
 @login_required
 def Item_add():
-    return render_template('itemadd.html')
+    form = ItemAdd()
+
+    if form.validate_on_submit():
+        file = form.image.data
+        file.save('market/static/uploads/'+file.filename)
+        item_to_add = Item(name=form.title.data,
+                           price=form.price.data,
+                           description=form.description.data,
+                           image=file.filename)
+
+     
+        db.session.add(item_to_add)
+        db.session.commit()
+        flash(f'Item added with item id :{item_to_add.id}', category='success')
+
+        return redirect(url_for('market_page'))
+    
+    if form.errors != {}:
+        for err_msg in form.errors.values():
+            flash(f'There was an error with adding the item: {err_msg}',category='danger')
+        
+    return render_template('itemadd.html', form=form)

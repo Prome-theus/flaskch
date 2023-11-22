@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(length=60), nullable=False)
     budget = db.Column(db.Integer(), nullable=False, default=1000)
     items = db.relationship('Item', backref='owned_user', lazy=True)
+    owned= db.Column(db.Integer(), db.ForeignKey('item.id'))
 
     @property
     def prettier_budget(self):
@@ -39,8 +40,9 @@ class Item(db.Model):
     name = db.Column(db.String(length=30), nullable=False, unique=True)
     price = db.Column(db.Integer(), nullable=False)
     # barcode = db.Column(db.String(length=12), nullable=False, unique=True)
-    description = db.Column(db.String(length=1024), nullable=False, unique=True)
-    owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    description = db.Column(db.String(length=1024), nullable=False, unique=False)
+    image = db.Column(db.String(length=1024), nullable=False,unique=False)
+    
 
     def __repr__(self):
         return f'Item {self.name}'
