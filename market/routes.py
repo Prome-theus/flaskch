@@ -60,3 +60,8 @@ def logout_page():
     logout_user()
     flash("you have been logged out!", category='info')
     return redirect(url_for("home_page"))
+
+@app.route('/review')
+@login_required
+def review_add():
+    return render_template('reviewadd.html')
