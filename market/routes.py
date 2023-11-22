@@ -61,7 +61,7 @@ def logout_page():
     flash("you have been logged out!", category='info')
     return redirect(url_for("home_page"))
 
-@app.route('/review')
+@app.route('/item_add')
 @login_required
-def review_add():
-    return render_template('reviewadd.html')
+def Item_add():
+    return render_template('itemadd.html')

@@ -1,6 +1,8 @@
 from collections.abc import Mapping, Sequence
 from typing import Any
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed, FileRequired
+from flask_uploads import UploadSet, IMAGES, configure_uploads
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError
 from market.models import User 
@@ -29,3 +31,10 @@ class LoginForm(FlaskForm):
     username = StringField(label='Username :', validators=[DataRequired()])
     password = PasswordField(label='Password :', validators=[DataRequired()])
     submit = SubmitField(label='Sign In')
+
+class ItemAdd(FlaskForm):
+    name = StringField(label="title :",validators=[Length(min=2, max=50),DataRequired()])
+    price = IntegerField(label="Cost :",validators=[DataRequired()])
+    description = StringField(label="Description",validators=[Length(min=25, max=1024),DataRequired()])
+    image = MultipleFileField(label="Image :")
+    submit = SubmitField(label="Add Product")

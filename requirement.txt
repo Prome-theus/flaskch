@@ -1,0 +1,9 @@
+Flask
+Flask-SQlAlchemy
+Flask-Login
+SQlAlchemy
+email-validator
+Flask-WTF
+WTForms
+bcrypt
+FLask-Uploads
