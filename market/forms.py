@@ -35,5 +35,5 @@ class ItemAdd(FlaskForm):
     title = StringField(label="title :",validators=[Length(min=2, max=50),DataRequired()])
     price = IntegerField(label="Cost :",validators=[DataRequired()])
     description = StringField(label="Description",validators=[Length(min=25, max=1024),DataRequired()])
-    image = FileField(label='Images', validators=[FileAllowed(['jpg','png'], 'Images Only!')])
+    image = FileField(label='Images', validators=[FileAllowed(['jpg','png','jpeg'], 'Images Only!')])
     submit = SubmitField(label="Add Product")
