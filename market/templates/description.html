@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="py-5">
+    <h2 class="font-extrabold text-4xl text-white text-center justify-center m-3">
+      Product Description
+    </h2>
+    <h1 class="text-5xl text-white text-center justify-center font-bold mb-1 mt-16">{{ product.name }}</h1>
+</div>
+
+<div class="flex">
+    <div class="w-4/12 m-8  flex item-center justify-center">
+        <img
+          src="{{ url_for('static', filename='uploads/' + product.image) }}"
+          alt="{{ product.name }}"
+          class="flex justify-item object-cover mb-4"
+        />
+    </div>
+    <div class="w-8/12">
+        <p class="text-white text-2xl mt-7 mr-10">{{ product.description }}</p>
+        <div class="text-blue-500 text-3xl mt-12 font-bold">₹ {{ product.price }}</div>
+        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full">
+          Add to Cart
+        </button>
+    </div>
+
+</div>
+  
+
+{% endblock content %}

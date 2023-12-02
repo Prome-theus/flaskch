@@ -22,6 +22,21 @@ def market_page():
 def categories():
     return render_template('Categories.html')
 
+@app.route('/description/<int:product_id>')
+def description(product_id):
+    product = Item.query.get_or_404(product_id)
+    return render_template('description.html', product=product)
+
+@app.route('/forgetpassword')
+def forget_password():
+    return render_template('forgetpassword.html')
+
+#userprofile
+#email verificaation page
+#review add page
+#about us
+#contact us page
+#product search page
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
