@@ -1,4 +1,4 @@
-  {% extends 'base.html' %} {% block title %}Market{% endblock title %} {% block
+{% extends 'base.html' %} {% block title %}Market{% endblock title %} {% block
 content %}
 <div class="py-10">
   <h2 class="font-extrabold text-4xl text-white text-center justify-center m-3">
@@ -10,39 +10,71 @@ content %}
     <div class="w-full lg:w-4/5 bg-gray-600 md:p-4 mr-2">
       <div class="container mx-auto p-8">
         <h1 class="text-3xl text-white font-bold mb-8">Available Products</h1>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-        >
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {% for item in pagination.items %}
-          <div class="group bg-white p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-            <img
-              src="{{ url_for('static', filename='uploads/' + item.image) }}"
-              alt="{{ item.name }}"
-              class="w-full h-auto object-cover mb-4"
-            />
-            <h2 class="text-lg font-semibold">{{ item.name }}</h2>
-            <p class="text-blue-500 font-bold my-2">₹{{ item.price }}</p>
-            <!-- <p class="text-gray-700 description group-hover:opacity-100">
-              {{ item.description }}
-            </p> -->
-            <a href="{{ url_for('description', product_id=item.id) }}"
-              class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full"  
-            >
-              More info
-            </a>
-            <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full">
-              Add to Cart
-            </button>
+          <div
+            onclick="openProductDialog('{{ item.name }}', '{{ item.description }}')"
+            class="group bg-white p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
+          >
+            <div class="flex flex-col justify-between h-full">
+
+              <!-- 80% Container -->
+              
+                <img
+                  src="{{ url_for('static', filename='uploads/' + item.image) }}"
+                  alt="{{ item.name }}"
+                  class="w-full h-auto object-cover mb-4"
+                />
+                <div class="">
+                  <h2 class="text-lg font-semibold">{{ item.name }}</h2>
+                  <p class="text-blue-500 font-bold my-2">₹ {{ item.price }}</p>
+                </div>
+                  
+
+              <!-- 20% Container -->
+                <div class="flex items-center justify-between  mt-4">
+                  <a
+                    href="#"
+                    onclick="openProductDialog('{{ item.name }}', '{{ item.description }}')"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-full"
+                  >
+                    More info
+                  </a>
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded-full">
+                    Buy now
+                  </button>
+              </div>
+            </div>
           </div>
+          <dialog id="productDialog" class="rounded-md bg-white p-4">
+            <h2 class="text-lg font-semibold mb-2" id="productDialogTitle"></h2>
+            <p class="text-gray-600 mb-4" id="productDialogDescription"></p>
+            <button
+              id="closeDialogButton"
+              class="bg-blue-500 text-white px-4 py-2 rounded-full"
+            >
+              Close
+            </button>
+          </dialog>
           {% endfor %}
         </div>
         <div class="mt-5">
           {% if pagination.has_prev %}
-          <a href="{{ url_for('market_page', page=pagination.prev_num) }}" class="btn btn-outline-secondary rounded-md bg-gray-900 text-white p-2">&laquo; Previous</a>
+          <a
+            href="{{ url_for('market_page', page=pagination.prev_num) }}"
+            class="btn btn-outline-secondary rounded-md bg-gray-900 text-white p-2"
+            >&laquo; Previous</a
+          >
           {% endif %}
-          <span class="mx-2 rounded-md bg-gray-900 text-white p-2">{{ pagination.page }}</span>
+          <span class="mx-2 rounded-md bg-gray-900 text-white p-2"
+            >{{ pagination.page }}</span
+          >
           {% if pagination.has_next %}
-          <a href="{{ url_for('market_page', page=pagination.next_num) }}" class="btn btn-outline-secondary rounded-md bg-gray-900 text-white p-2">Next &raquo;</a>
+          <a
+            href="{{ url_for('market_page', page=pagination.next_num) }}"
+            class="btn btn-outline-secondary rounded-md bg-gray-900 text-white p-2"
+            >Next &raquo;</a
+          >
           {% endif %}
         </div>
       </div>
@@ -57,5 +89,29 @@ content %}
     </div>
   </div>
 </div>
+<script>
+  // JavaScript to handle dialog functionality
+  const productDialog = document.getElementById("productDialog");
+  const productDialogTitle = document.getElementById("productDialogTitle");
+  const productDialogDescription = document.getElementById(
+    "productDialogDescription"
+  );
+  const closeDialogButton = document.getElementById("closeDialogButton");
+
+  // Function to open the dialog
+  function openProductDialog(name, description) {
+    productDialogTitle.textContent = name;
+    productDialogDescription.textContent = description;
+    productDialog.showModal();
+  }
+
+  // Function to close the dialog
+  function closeProductDialog() {
+    productDialog.close();
+  }
+
+  // Event listener for the close button
+  closeDialogButton.addEventListener("click", closeProductDialog);
+</script>
 <!-- Add this script at the end of your HTML file -->
 {% endblock content %}
