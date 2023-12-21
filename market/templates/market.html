@@ -13,38 +13,39 @@ content %}
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {% for item in pagination.items %}
           <div
-            onclick="openProductDialog('{{ item.name }}', '{{ item.description }}')"
-            class="group bg-white p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
+            class=" bg-white p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
           >
-            <div class="flex flex-col justify-between h-full">
-
-              <!-- 80% Container -->
+            <div onclick="openProductDialog('{{ item.name }}', '{{ item.description }}')"  class="flex flex-col justify-between h-full rounded-md overflow-hidden">
               
-                <img
-                  src="{{ url_for('static', filename='uploads/' + item.image) }}"
-                  alt="{{ item.name }}"
-                  class="w-full h-auto object-cover mb-4"
-                />
-                <div class="">
-                  <h2 class="text-lg font-semibold">{{ item.name }}</h2>
-                  <p class="text-blue-500 font-bold my-2">₹ {{ item.price }}</p>
-                </div>
-                  
-
+              <!-- 80% Container -->
+              <img
+                src="{{ url_for('static', filename='uploads/' + item.image) }}"
+                alt="{{ item.name }}"
+                class="w-full h-auto object-cover "
+              />
+            
               <!-- 20% Container -->
-                <div class="flex items-center justify-between  mt-4">
+              <div class="flex flex-col p-4">
+                <div class="mb-2">
+                  <h2 class="text-lg font-semibold">{{ item.name }}</h2>
+                  <p class="text-blue-500 font-bold my-1">₹ {{ item.price }}</p>
+                </div>
+                
+                <div class="flex justify-between items-center space-x-2">
                   <a
-                    href="#"
-                    onclick="openProductDialog('{{ item.name }}', '{{ item.description }}')"
-                    class="bg-blue-500 text-white px-4 py-2 rounded-full"
+                    href="{{ url_for('description', product_id=item.id) }}"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-800 transition duration-300 hover:scale-105"
                   >
                     More info
-                  </a>
-                  <button class="bg-blue-500 text-white px-4 py-2 rounded-full">
+                </a>
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-800 transition duration-300 hover:scale-105">
                     Buy now
                   </button>
+                </div>
               </div>
+            
             </div>
+            
           </div>
           <dialog id="productDialog" class="rounded-md bg-white p-4">
             <h2 class="text-lg font-semibold mb-2" id="productDialogTitle"></h2>
@@ -81,7 +82,7 @@ content %}
     </div>
 
     <!-- 40% Container -->
-    <div class="w-full lg:w-2/5 bg-gray-400 p-4">
+    <div class="w-full lg:w-1/5 bg-gray-400 p-4">
       <!-- Content for the 40% part -->
       <div class="text-2xl text-dark">Item Purchased</div>
       <li>iphone</li>
