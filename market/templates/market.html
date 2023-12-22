@@ -26,7 +26,7 @@ content %}
             />
 
             <!-- 20% Container -->
-            <div class="flex flex-col p-4">
+            <div class="flex flex-col p-2">
               <div class="mb-2">
                 <h2 class="text-lg font-semibold">{{ item.name }}</h2>
                 <p class="text-blue-500 font-bold my-1">₹ {{ item.price }}</p>
@@ -35,12 +35,12 @@ content %}
               <div class="flex justify-between items-center space-x-2">
                 <a
                   href="{{ url_for('description', product_id=item.id) }}" 
-                  class="bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-800 transition duration-300 hover:scale-105"
+                  class="bg-blue-500 text-white px-2 py-2 rounded-2xl hover:bg-blue-800 transition duration-300 hover:scale-105"
                 >
-                  Peek
+                  More Info
                 </a>
                 <button
-                  class="bg-blue-500 text-white px-4 py-2 rounded-2xl hover:bg-blue-800 transition duration-300 hover:scale-105"
+                  class="bg-blue-500 text-white px-2 py-2 rounded-2xl hover:bg-blue-800 transition duration-300 hover:scale-105"
                 >
                   Buy now
                 </button>

@@ -7,3 +7,4 @@ Flask-WTF
 WTForms
 bcrypt
 FLask-Uploads
+Flask-OAuthlib
