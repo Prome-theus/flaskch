@@ -1,9 +1,7 @@
 Flask
 Flask-SQlAlchemy
 Flask-Login
-SQlAlchemy
-email-validator
+flask_bcrypt
 Flask-WTF
-WTForms
-bcrypt
 FLask-Uploads
+email-validator

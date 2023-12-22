@@ -17,7 +17,7 @@ def home_page():
 def market_page():
     page = request.args.get('page', 1, type=int)
     item_per_page = 6
-    pagination = Item.query.paginate(per_page=item_per_page)
+    pagination = Item.query.paginate(page=page,per_page=item_per_page)
     items = pagination.items
     return render_template('market.html', items=items, pagination=pagination)
 
